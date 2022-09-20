@@ -1,0 +1,21 @@
+
+<div *ngIf="users$|async as users" class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4" *ngFor="let user of users">
+            <mat-card  class="mb-4 p-4">
+                <h3>
+                    <a [routerLink]="['/posts', user.id]">{{user.username}}</a>
+                </h3>
+                <p>
+                    Name: {{user.name}}
+                </p>
+                <p>
+                    Email: {{user.email}}
+                </p>
+                <p>
+                    Phone: {{user.phone}}
+                </p>
+            </mat-card>
+        </div>
+    </div>
+</div>
